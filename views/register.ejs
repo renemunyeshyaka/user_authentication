@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <title>Login and Registration Form Design</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="/css/register.css" />
+ <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+
+<body> <h1>Create your account</h1>
+
+  
+
+ <div class="login-page">
+  <div class="form">
+    <!-- registration form -->
+   <form class="register-form" action="/register" method="POST">
+
+    <% if (messages.error) { %>
+      <div class="alert alert-danger">
+        <strong><%= messages.error  %></strong>
+      </div>
+      <% } %>
+
+    <input type="text" name="name" id="name" placeholder="Full Name" required/>
+    <input type="email" name="email" id="email" placeholder="Email Adress" required/>
+    <input id="phone" type="tel" name="phone" id="phone" placeholder="Enter your phone number" required/></br></br>
+    <input type="password" name="password" id="password" placeholder="Enter password" required/>
+    <input type="password" name="repassword" id="repassword" placeholder="Retype password" required/>
+    <button>Create</button>
+    <p class="message"> Registered? <a href="login"> Login</a> </p>
+   </form>
+   <!-- ^^  form code  ^^ -->
+ <div class="alert alert-info" style="display: none;"></div>
+   
+  </div>
+ </div>
+
+ <script src='https://code.jquery.com/jquery-3.6.0.min.js'>  </script>
+
+ <script>  $('.message a').click(function () {
+   $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+  });
+  </script>  
+
+</body>
+<script>
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
+
+</html>

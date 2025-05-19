@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <title>Login and Registration Form Design</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="css/forget.css" />
+
+</head>
+
+<body> <h1> Password Forgotten </h1>
+
+ <div class="login-page">
+  <div class="form">
+    <!-- forget form -->
+   <form class="forget-form" action="/forget" method="POST">
+
+    <% if (messages.error) { %>
+      <div class="alert alert-danger">
+        <strong><%= messages.error  %></strong>
+      </div>
+      <% } %>
+
+    <input type="text" name="email" placeholder="email id" required />
+
+    <button>Submit</button>
+    <p class="message"> Registered? <a href="login"> Login</a> </p>
+    <p class="message"> Not Registered? <a href="register"> Register </a> </p>
+    <!-- <p class="message"> Go Back Home? <a href="../../www/index"> Home </a> </p> -->
+    
+   </form>
+     
+  </div>
+ </div>
+
+ <script src='https://code.jquery.com/jquery-3.6.0.min.js'>  </script>
+
+   <script>  
+   $('.password a').click(function () {
+    $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+   });
+   </script>
+
+
+</body>
+
+</html>

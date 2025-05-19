@@ -1,0 +1,29 @@
+        body{
+     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("/media/pic2.jpg");
+     height: 120vh;
+     background-size: cover;
+     background-position: center;
+    }
+    
+    h1, h2, h3{
+        text-align: center;
+        color: #fff;
+        font-style: oblique;
+        font-weight: 300;
+    }
+
+    .top_menu {
+        position: fixed;
+        width: 100%;
+        background: crimson;
+        margin: 0;
+        padding: 2rem;
+    }
+    .top_menu a{
+        display: inline-flex;
+        color: #fff;
+        border-radius: 5px;    
+     }
+
+
+     
